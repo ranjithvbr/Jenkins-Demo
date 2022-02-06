@@ -1,23 +1,25 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
-    }
-    environment {
-        CI = 'true' 
-    }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Test') { 
-            steps {
-                sh './jenkins/scripts/test.sh' 
-            }
-        }
+    agent any
+
+      stages {
+          stage('build') {
+              steps {
+                  echo 'building the software'
+                  sh 'npm install'
+              }
+          }
+          stage('test') {
+              steps {
+                  echo 'testing the software'
+                  sh 'npm run test'
+              }
+          }
+
+          stage('lint-test') {
+              steps {
+                  echo 'testing the software'
+                  sh 'npx eslint src'
+          }
+      }
     }
 }
