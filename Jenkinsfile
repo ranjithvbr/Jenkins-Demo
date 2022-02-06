@@ -4,8 +4,8 @@ pipeline {
       stages {
           stage('build') {
               steps {
-                  echo 'building the software'
-                  sh 'npm install'
+                  sh "npm install -g yarn"
+                  sh "yarn install"
               }
           }
           stage('test') {
