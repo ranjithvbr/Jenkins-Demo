@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {nodejs "node"}
       stages {
-          stage('Install') {
+          stage('Build') {
               steps {
                   sh "npm install -g yarn"
                   sh "yarn install"
@@ -15,7 +15,7 @@ pipeline {
               }
           }
 
-          stage('Lint test') {
+          stage('Eslint test') {
               steps {
                   echo 'testing the eslint'
                   sh 'npx eslint src'
