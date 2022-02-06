@@ -21,3 +21,5 @@ yarn ios
 ## To Run Android Emulator
 
 yarn android
+
+/test
