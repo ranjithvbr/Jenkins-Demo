@@ -10,22 +10,17 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
-    runs-on: ${{matrix.os}}
+  build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version:
-          - 12.x
+        node: [ '12', '14', '16' ]
+    name: Node ${{ matrix.node }} sample
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: setup node ${{matrix.node-version}}
-        uses: actions/setup-node@v1.4.1
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{matrix.node-version}}
-      - name: install packages
-        run: yarn install
-      - name: check linting
-        run: yarn lint
-      - name: test
-        run: yarn test
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm test
