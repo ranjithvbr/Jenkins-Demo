@@ -41,8 +41,12 @@ describe("Insight Charts for strict mode where the user data has  webAndAppActiv
     // });
 
     it('should call local storage to get collected data when null', async () => {
+        
+          act(() => {
+            ReactDOM.render(<InsightsChart radioName={radioName.strict} changePage={changePage} />, InsightsChart);
+          });
 
-        await waitFor(act(() => render(<InsightsChart radioName={radioName.strict} changePage={changePage} />)))
+        await waitFor(() => render(InsightsChart))
 
         expect(LocalStorage.getScrappedData).toHaveBeenCalled();
 
