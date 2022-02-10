@@ -14,6 +14,6 @@ jobs:
     runs-on: macOS-latest
     steps:
     - name: Pod install
-      working-directory: ./ios
+      working-directory: ios
       run: bundle exec pod install
 
