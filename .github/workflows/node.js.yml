@@ -11,7 +11,8 @@ on:
 
 jobs:
   build:
-    runs-on: macOS-latest
+    name: Build
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
