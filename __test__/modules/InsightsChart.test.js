@@ -4,9 +4,6 @@ import { act } from 'react-dom/test-utils';
 import InsightsChart from "../../src/modules/Insights/InsightsChart";
 import { LocalStorage } from "../../src/components/common/LocalStorage";
 
-beforeEach(jest.useFakeTimers);
-afterEach(jest.useRealTimers);
-
 jest.mock("@react-native-async-storage/async-storage", () => ({
     getItem: jest.fn()
 }));
