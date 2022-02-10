@@ -13,7 +13,20 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
-    - name: Pod install
-      working-directory: ios
-      run: bundle exec pod install
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+
+      - run: yarn run test
 
