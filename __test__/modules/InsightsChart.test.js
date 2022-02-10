@@ -1,5 +1,6 @@
 import { render, waitFor } from '@testing-library/react-native';
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import InsightsChart from "../../src/modules/Insights/InsightsChart";
 import { LocalStorage } from "../../src/components/common/LocalStorage";
 
