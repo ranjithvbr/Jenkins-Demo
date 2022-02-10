@@ -23,4 +23,5 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: yarn install
-      - run: npm test
+      - run: yarn test -- -u
+      - run: yarn eslint src
