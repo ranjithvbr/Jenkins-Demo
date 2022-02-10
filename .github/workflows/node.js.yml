@@ -22,6 +22,7 @@ jobs:
       with:
         node-version: '14'
         cache: 'npm'
+    - run: cd ios pod install    
     - run: npm install
     - run: npm test
 
