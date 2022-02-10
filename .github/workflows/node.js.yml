@@ -14,12 +14,6 @@ jobs:
     runs-on: macOS-latest
     steps:
     - name: Pod install
-      working-directory: ./Example
+      working-directory: ./ios
       run: bundle exec pod install
-#       with:
-#         node-version: '14'
-#         cache: 'npm'
-#     - run: cd ios pod install    
-#     - run: npm install
-#     - run: npm test
 
