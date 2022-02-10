@@ -19,6 +19,7 @@ jobs:
     steps:
     - name: Install Dependencies
       run: |
+        ls
         cd ios
         pod install --repo-update
       shell: bash
