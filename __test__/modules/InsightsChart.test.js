@@ -1,9 +1,7 @@
-import { render, waitFor } from '@testing-library/react-native';
-import React from 'react';
-import InsightsChart from "../../src/modules/Insights/InsightsChart";
-import { LocalStorage } from "../../src/components/common/LocalStorage";
+test('1 + 1 = 2', () => {
+  expect(1 + 1).toBe(2);
+});
 
-
-jest.mock("@react-native-community/async-storage", () => ({
-    getItem: jest.fn()
-}));
+test('1 + 2 = 3', () => {
+  expect(1 + 2).toBe(3);
+});
