@@ -10,8 +10,8 @@ import {
 } from "react-native";
 import { VictoryPie } from "victory-native";
 import Gcard from "./Gcard";
-import { googleActivityData } from "./sampleDataGoogleActivity.json"
-import { Colors } from "../../styles/colors"
+import { googleActivityData } from "./sampleDataGoogleActivity.json";
+import { Colors } from "../../styles/colors";
 import { commonStyles } from "../../styles/commonStyles";
 import { Fonts } from "../../styles/fonts";
 import { Metrics } from "../../styles/metrics";
